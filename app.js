@@ -68,6 +68,12 @@ const createSlider = () => {
   // hide image aria
   imagesArea.style.display = 'none';
   const duration = document.getElementById('duration').value || 1000;
+  // error handling negative value input
+  if(duration<0){
+    // console.log("stop");
+    alert("set a positive number up to 3 digit as miliseconds");
+    return;
+  }
   sliders.forEach(slide => {
     let item = document.createElement('div')
     item.className = "slider-item";
